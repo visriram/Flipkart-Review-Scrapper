@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Reviews</title>
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+    <a class="navbar-brand" href="/">Flipkart Review Scraper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample09">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/visriram/vigneshwar.sriram" target="_blank">GitHub Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Word Cloud</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Download Data</a>
+          </li>
+      </ul>
+      <form class="form-inline my-2 my-md-0" action="/" method='POST'>
+        <input class="form-control" type="text" placeholder="Search" name='content' id="content
+        " aria-label="Search">
+      </form>
+    </div>
+  </nav>
+  Product":search_string,"Customer Name":customer_name,"Comment Heading":comment_heading, "Rating":rating, "Reviews":comment
+  <div class="container">
+    <table class="table">
+        <thead>
+          <tr style="text-align: center;">
+            <th>#</th>
+            <th scope="col">Product</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Comment Heading</th>
+            <th scope="col">Reviews</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for review in reviews %}
+        <tr style="text-align: center;">
+          <th scope="row">{{ loop.index }}</th>
+          <td>{{review['Product']}}</td>
+          <td>{{review['Customer Name']}}</td>
+          <td>{{review['Rating']}}</td>
+          <td>{{review['Comment Heading']}}</td>
+          <td>{{review['Reviews']}} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+  </div>
+{% endblock %}

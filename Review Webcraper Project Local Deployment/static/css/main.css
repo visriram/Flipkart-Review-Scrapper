@@ -1,0 +1,33 @@
+body{
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/wheat.png");
+}
+
+.container{
+    padding-top: 30px;
+}
+
+.inner-box{
+    margin: 70px;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #e9ecef;
+    color: black;
+    text-align: center;
+}
+
+tr:nth-child(odd)	{ background-color:#E6E6E6; }
+tr:nth-child(even)	{ background-color:white; }
+
+tr:hover{
+    background-color: tan;
+
+}
+
+th{
+    background-color: teal;
+}
